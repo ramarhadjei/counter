@@ -24,7 +24,7 @@ class Counter extends Component {
     this.setState({
       count: this.state.count + 1,
         }); 
-    }else if (this.state.doubleCount === true && this.state.count <20){
+    }else if (this.state.doubleCount === true && this.state.count <19){
       this.setState({
         count: this.state.count +2
       })
@@ -35,34 +35,36 @@ class Counter extends Component {
      
  
   
-  decrement = () => {
+    decrement = () => {
 
-    if(this.state.doubleCount === false && this.state.count > 0){
-    
-      this.setState({
-      count: this.state.count -1,
-      })
-    }else if (this.state.doubleCount === true && this.state.count >0){
-      this.setState({
-        count: this.state.count -2
-      })
+      if(this.state.doubleCount === false && this.state.count > 0){
+      
+        this.setState({
+        count: this.state.count -1,
+        })
+      }else if (this.state.doubleCount === true && this.state.count >0){
+        this.setState({
+          count: this.state.count -2
+        })
+      }
     }
-  }
     
   
-
   
-  clear = () => {
+    clear = () => {
     this.setState({
       count: this.state.count = 0.
     });
   };
 
+  
   double = () => {
     if(this.state.doubleCount) {
       this.setState({
         doubleCount: false,
       })
+
+      
       //console.log(this.state.doubleCount)
     }else {
       this.setState({
