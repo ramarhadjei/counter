@@ -11,24 +11,30 @@ class Counter extends Component {
   //this is where our methods will be defined
 
   increment = () => {
-     // this is where your code goes
-    // could have done with one condition for both increment and decrement !!!
-    // decrement would have been ( this.state.count > 0)
-    // if (this.state.count < 20){
-    // this.setState({
-    //  count: this.state.count +1
-    // })
-    // }
+     
 
-    if (this.state.doubleCount ===  false && this.state.count < 20) {
-    this.setState({
-      count: this.state.count + 1,
-        }); 
-    }else if (this.state.doubleCount === true && this.state.count <19){
-      this.setState({
-        count: this.state.count +2
-      })
-    } 
+if (this.state.count < 20){
+  this.setState({
+    count: this.state.count + 1,
+
+  });
+}
+if(this.state.doubleCount && this.state.count <19){
+  this.setState({
+  count: this.state.count + 2,
+});
+}
+
+
+    // if (this.state.doubleCount ===  false && this.state.count < 20) {
+    // this.setState({
+    //   count: this.state.count + 1,
+    //     }); 
+    // }else if (this.state.doubleCount === true && this.state.count <19){
+    //   this.setState({
+    //     count: this.state.count +2
+    //   })
+    // } 
   };
     // this is where your code goes
    
@@ -37,16 +43,28 @@ class Counter extends Component {
   
     decrement = () => {
 
-      if(this.state.doubleCount === false && this.state.count > 0){
+     if(this.state.count >=1){
+       this.setState({
+         count: this.state.count -1,
+       } );
+       
+     }
+     if (this.state.doubleCount && this.state.count >1 ){
+       this.setState({
+         count: this.state.count -2,
+       });
+     }
+
+      // if(this.state.doubleCount === false && this.state.count > 0){
       
-        this.setState({
-        count: this.state.count -1,
-        })
-      }else if (this.state.doubleCount === true && this.state.count >0){
-        this.setState({
-          count: this.state.count -2
-        })
-      }
+      //   this.setState({
+      //   count: this.state.count -1,
+      //   })
+      // }else if (this.state.doubleCount === true && this.state.count >0){
+      //   this.setState({
+      //     count: this.state.count -2
+      //   })
+      // }
     }
     
   
